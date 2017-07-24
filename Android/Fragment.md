@@ -28,3 +28,11 @@
 
   ​
 
+
+#### Fragment数据传递
+
+- 在Fragment中加入`newInstance(Data data)`方法，创建Fragment时不使用原来的构造方法创建。
+
+- 类似于Activity的`startActivityForResult()`，Fragment可以使用`setTargetFragment(Fragment fragment, int requestCode)`来通知是哪一个Fragment在返回数据。
+
+  在目标Fragment中使用`getTargetFragment().onActivityResult()`传递数据
