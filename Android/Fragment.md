@@ -36,3 +36,7 @@
 - 类似于Activity的`startActivityForResult()`，Fragment可以使用`setTargetFragment(Fragment fragment, int requestCode)`来通知是哪一个Fragment在返回数据。
 
   在目标Fragment中使用`getTargetFragment().onActivityResult()`传递数据
+
+#### Tips
+
+- 保留Fragment实例。可以在`onCreate()`方法中调用`setRetainInstance(true)`，在Activity销毁重建时，已保留的Fragment不会随Activity一起被销毁，他会一直保留并在需要时原封不动的传递给新的Activity。注意：Fragment的保存时间非常短。
