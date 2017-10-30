@@ -34,18 +34,19 @@ Git中用`HEAD`表示当前版本，上一版本就是`HEAD^` ，上上版本就
 
 ### 远程仓库
 
-- GitHub
-  - `git remote add origin <git url>`  在本地库目录下执行，可以将本地仓库与Github中对应仓库相关联。`origin`为远程库的名字，是Git的默认叫法。
-  - `git push -u origin master`  把本地库的内容推送到远程，`git push`  将 当前分支`master` 推送到远程。使用`-u` 参数会把本地的`master`分支与远程的`master`分支关联起来。
-  - `git clone <git url>` 克隆仓库到本地。
+- `git remote add origin <git url>` 在本地库目录下执行，可以将本地仓库与远程仓库相关联。`origin`为远程库的名字，是Git的默认叫法。
+- `git remote set-url <name> <url>` 修改远程仓库`url` 。
 
+
+- `git push -u origin master` 把本地库的内容推送到远程，`git push`  将 当前分支`master` 推送到远程。使用`-u` 参数会把本地的`master` 分支与远程的`master`分支关联起来。
+- `git clone <git url>` 克隆仓库到本地。
 
 
 ### 分支
 
 - `git checkout -b dev` 创建并切换到`dev`分支
   - 该命令相当于两条命令`git branch dev` 、`git checkout dev` 
-- `git brach`  查看当前分支，该命令会列出所有分支，当前分支前面会标一个`*`号。
+- `git branch`  查看当前分支，该命令会列出所有分支，当前分支前面会标一个`*`号。
 - `git merge dev` 合并指定分支`dev`到当前分支。
   - 当合并冲突时，手动处理冲突文件后再次`add` 、`commit` 
   - 合并分支时，如果没有冲突，Git会使用`Fast forward`模式。这种模式下，删除分支后，会丢掉分支信息。`git merge --no-ff dev`  将`dev`分支合并到当前分支，禁用`Fast forward`方式。
@@ -99,7 +100,9 @@ Git中用`HEAD`表示当前版本，上一版本就是`HEAD^` ，上上版本就
 
 #### Issue
 
-- [`Detached HEAD`状态](http://www.jianshu.com/p/ae4857d2f868)
+- [Detached HEAD状态](http://www.jianshu.com/p/ae4857d2f868)
+- [No tracked branch](https://stackoverflow.com/questions/24215032/cant-update-no-tracked-branch)
+- [Refusing to merge unrelated histories](https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories)
 
 
 
